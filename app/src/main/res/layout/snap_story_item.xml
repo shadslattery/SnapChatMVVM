@@ -22,7 +22,7 @@
         android:id="@+id/iv_image"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@mipmap/ic_launcher_round"
+        android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toTopOf="@id/tv_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
