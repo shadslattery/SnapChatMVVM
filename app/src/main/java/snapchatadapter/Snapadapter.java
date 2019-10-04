@@ -20,10 +20,12 @@ public class Snapadapter extends RecyclerView.Adapter<Snapadapter.SnapViewHolder
 
     private List<SnapStory> pictureList;
 
-    public Snapadapter(List<SnapStory>pictureList){this.pictureList=pictureList;}
+    public Snapadapter(List<SnapStory> pictureList) {
+        this.pictureList = pictureList;
+    }
 
-@NonNull
-@Override
+    @NonNull
+    @Override
     public SnapViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.snap_story_item,
@@ -35,9 +37,18 @@ public class Snapadapter extends RecyclerView.Adapter<Snapadapter.SnapViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull Snapadapter.SnapViewHolder holder, int position) {
+//        SnapStory snapStory = pictureList.get(position);
+
+        // Pulls the URL's into the ImImage, which is the iv_image field
         SnapStory friends2 = pictureList.get(position);
-        String path= friends2.getImageUrl();
+
+        String path = friends2.getImageUrl();
         Picasso.get().load(path).into(holder.ImImage);
+
+        // Pulls the UserName into the friendName3, which is the username field
+        String friendName2 = friends2.getUserName();
+        holder.tvUserName.setText(friendName2);
+
     }
 
     @Override
@@ -46,13 +57,13 @@ public class Snapadapter extends RecyclerView.Adapter<Snapadapter.SnapViewHolder
     }
 
     class SnapViewHolder extends RecyclerView.ViewHolder {
-        TextView tvusername;
-         ImageView ImImage;
+        TextView tvUserName;
+        ImageView ImImage;
 
-        public SnapViewHolder(@NonNull View itemView){
+        public SnapViewHolder(@NonNull View itemView) {
 
             super(itemView);
-            tvusername = itemView.findViewById(R.id.tv_name);
+            tvUserName = itemView.findViewById(R.id.tv_name);
             ImImage = itemView.findViewById(R.id.iv_image);
         }
     }
