@@ -3,6 +3,7 @@ package snapchatadapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.snapchatmvvm.R;
 import com.example.snapchatmvvm.model.SnapStory;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -34,6 +36,8 @@ public class Snapadapter extends RecyclerView.Adapter<Snapadapter.SnapViewHolder
     @Override
     public void onBindViewHolder(@NonNull Snapadapter.SnapViewHolder holder, int position) {
         SnapStory friends2 = pictureList.get(position);
+        String path= friends2.getImageUrl();
+        Picasso.get().load(path).into(holder.ImImage);
     }
 
     @Override
@@ -42,10 +46,14 @@ public class Snapadapter extends RecyclerView.Adapter<Snapadapter.SnapViewHolder
     }
 
     class SnapViewHolder extends RecyclerView.ViewHolder {
-        TextView tvname;
+        TextView tvusername;
+         ImageView ImImage;
 
         public SnapViewHolder(@NonNull View itemView){
+
             super(itemView);
+            tvusername = itemView.findViewById(R.id.tv_name);
+            ImImage = itemView.findViewById(R.id.iv_image);
         }
     }
 }

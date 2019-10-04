@@ -24,9 +24,9 @@ public class Repository {
 
     public List<SnapStory> getData() {
         List<SnapStory> oldfriends = new ArrayList<>();
-        oldfriends.add(new SnapStory("shadslattery", ""));
-        oldfriends.add(new SnapStory("troytaylor", ""));
-        oldfriends.add(new SnapStory("thissucks", ""));
+        oldfriends.add(new SnapStory("shadslattery","https://kaboompics.com/cache/e/f/3/4/e/ef34e9818ff86a0bb5ac144a0189be29a1644c54.jpeg?version=v52"));
+        oldfriends.add(new SnapStory("troytaylor", "https://kaboompics.com/cache/e/f/3/4/e/ef34e9818ff86a0bb5ac144a0189be29a1644c54.jpeg?version=v52"));
+        oldfriends.add(new SnapStory("thissucks", "https://kaboompics.com/cache/e/f/3/4/e/ef34e9818ff86a0bb5ac144a0189be29a1644c54.jpeg?version=v52"));
         return oldfriends;
     }
 }
