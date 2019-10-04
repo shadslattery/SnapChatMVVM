@@ -23,10 +23,14 @@ public class MainActivity extends AppCompatActivity {
         rvPeople = findViewById(R.id.rv_snap_stories);
 
         // Finish setting up recycleview
-        rvPeople.setLayoutManager(new LinearLayoutManager(this));
+        //rvPeople.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(
+                MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        rvPeople.setLayoutManager(horizontalLayoutManagaer);
         rvPeople.setHasFixedSize(true);
 
         // Init SnapAdapter
-        staffAdapter = new Snapadapter()
+        staffAdapter = new Snapadapter(Repository.getInstance().getData());
+        rvPeople.setAdapter(staffAdapter);
     }
 }

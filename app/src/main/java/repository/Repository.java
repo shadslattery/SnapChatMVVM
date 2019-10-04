@@ -27,6 +27,7 @@ public class Repository {
         oldfriends.add(new SnapStory("shadslattery", ""));
         oldfriends.add(new SnapStory("troytaylor", ""));
         oldfriends.add(new SnapStory("thissucks", ""));
+        return oldfriends;
     }
 }
 
